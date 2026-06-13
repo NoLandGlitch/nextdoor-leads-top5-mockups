@@ -1,0 +1,460 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Sharky's Sports Bar &amp; Grill Mock Up — Live Sports, Specials &amp; Good Times, Williamstown NJ</title>
+  <meta name="description" content="Your neighborhood sports bar in Williamstown, NJ. Daily drink deals, wing specials, trivia, karaoke, rooftop deck, pool tables, and live sports. Open late 7 days. Call 856-728-3666.">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Barlow:wght@400;500;600;700&family=Barlow+Condensed:wght@600;700;800;900&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="../styles/main.css">
+</head>
+<body class="site-sharkys">
+
+  <!-- NAV -->
+  <nav class="nav" role="navigation" aria-label="Main">
+    <div class="container nav__inner">
+      <a href="#top" class="nav__logo">
+        <img src="../assets/logo-sharkys.svg" alt="Sharky's Sports Bar &amp; Grill logo">
+      </a>
+      <ul class="nav__links" role="list">
+        <li><a href="#specials">Specials</a></li>
+        <li><a href="#events">Events</a></li>
+        <li><a href="#menu">Food &amp; Drinks</a></li>
+        <li><a href="#hours">Hours</a></li>
+        <li><a href="../index.html" class="back-link">← All Sites</a></li>
+      </ul>
+      <div class="nav__actions">
+        <a href="tel:8567283666" class="nav__phone">856-728-3666</a>
+        <a href="#specials" class="btn btn--primary">See Specials</a>
+      </div>
+      <button class="nav__hamburger" aria-label="Open menu" aria-expanded="false">
+        <span></span><span></span><span></span>
+      </button>
+    </div>
+    <nav class="nav__mobile-menu" aria-label="Mobile menu">
+      <a href="#specials">Specials</a>
+      <a href="#events">Events</a>
+      <a href="#menu">Food &amp; Drinks</a>
+      <a href="#hours">Hours &amp; Location</a>
+      <a href="#specials" class="btn btn--primary" style="margin-top:0.5rem;text-align:center;justify-content:center;color:#000;">See Specials</a>
+      <a href="../index.html">← Back to All Sites</a>
+    </nav>
+  </nav>
+
+  <!-- SPECIALS STRIP -->
+  <div class="specials-strip" aria-label="Current special">
+    🦈 Wing Specials · Daily Drink Deals · Trivia Nights · Karaoke · Rooftop Deck Open
+  </div>
+
+  <!-- HERO -->
+  <section id="top" class="hero" style="background-image: url('../assets/hero-sharkys.jpg');" aria-label="Hero">
+    <div class="hero__overlay"></div>
+    <div class="container">
+      <div class="hero__content">
+        <img src="../assets/logo-sharkys.svg" alt="Sharky's Sports Bar &amp; Grill" class="hero__logo">
+        <p class="hero__eyebrow">Williamstown, NJ · Open Late 7 Days</p>
+        <h1>Your Bar.<br>Your Game.<br>Your Night.</h1>
+        <p class="hero__sub">Daily specials, live sports on every screen, rooftop deck, trivia, karaoke, pool tables, and a kitchen that delivers — Sharky's is the spot in Williamstown.</p>
+        <div class="hero__actions">
+          <a href="#specials" class="btn btn--primary btn--lg" style="color:#000;">Tonight's Specials</a>
+          <a href="#events" class="btn btn--outline-white btn--lg">Upcoming Events</a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- STATS BAR -->
+  <div class="stats-bar">
+    <div class="container">
+      <div class="stats-bar__grid">
+        <div>
+          <span class="stat__number">2AM</span>
+          <span class="stat__label">Close Every Night</span>
+        </div>
+        <div>
+          <span class="stat__number">Daily</span>
+          <span class="stat__label">Drink Specials</span>
+        </div>
+        <div>
+          <span class="stat__number">Roof</span>
+          <span class="stat__label">Top Outdoor Deck</span>
+        </div>
+        <div>
+          <span class="stat__number">Live</span>
+          <span class="stat__label">Sports Every Game</span>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- SPECIALS -->
+  <section id="specials" class="section">
+    <div class="container">
+      <header class="section-header">
+        <span class="eyebrow">Daily Deals</span>
+        <h2>Specials Worth Showing Up For</h2>
+        <p>Every night of the week has something going on at Sharky's. Check what's on before you head out — then head out.</p>
+      </header>
+
+      <div class="events-grid">
+        <div class="event-card">
+          <span class="event-card__day">Monday</span>
+          <span class="event-card__icon">🍺</span>
+          <h3>Monday Night Football</h3>
+          <p>Cold beer specials all night. Catch the game on the big screen — wings and a pint to match.</p>
+        </div>
+        <div class="event-card">
+          <span class="event-card__day">Tuesday</span>
+          <span class="event-card__icon">🧠</span>
+          <h3>Trivia Night</h3>
+          <p>Test your knowledge, compete with your crew, and earn bar credit. Categories change weekly.</p>
+        </div>
+        <div class="event-card">
+          <span class="event-card__day">Wednesday</span>
+          <span class="event-card__icon">🍗</span>
+          <h3>Wing Wednesday</h3>
+          <p>Discounted wings all night — classic, boneless, or tossed in one of our signature sauces. Flavors rotate.</p>
+        </div>
+        <div class="event-card">
+          <span class="event-card__day">Thursday</span>
+          <span class="event-card__icon">🎵</span>
+          <h3>Throwback Night</h3>
+          <p>Throwback music, drink specials, and a vibe that gets the weekend started early. DJ or playlist varies.</p>
+        </div>
+        <div class="event-card">
+          <span class="event-card__day">Friday</span>
+          <span class="event-card__icon">🎤</span>
+          <h3>Friday Karaoke</h3>
+          <p>Step up, sing your song, and let the crowd decide. Karaoke nights at Sharky's have a reputation. Come ready.</p>
+        </div>
+        <div class="event-card">
+          <span class="event-card__day">Saturday</span>
+          <span class="event-card__icon">🏈</span>
+          <h3>Game Day Saturday</h3>
+          <p>We're open by noon. Every game, every channel, every screen. Drinks flowing before kickoff.</p>
+        </div>
+        <div class="event-card">
+          <span class="event-card__day">Sunday</span>
+          <span class="event-card__icon">🏆</span>
+          <h3>Sunday Funday</h3>
+          <p>All-day drink specials, football all afternoon, and the rooftop deck open weather permitting. A full day well spent.</p>
+        </div>
+      </div>
+
+      <p style="text-align:center;margin-top:2rem;font-size:0.82rem;color:var(--color-text-light);">Specials and events subject to change. Call us or check our social pages for the latest lineup.</p>
+    </div>
+  </section>
+
+  <!-- EVENTS & ENTERTAINMENT -->
+  <section id="events" class="section section--alt">
+    <div class="container">
+      <header class="section-header">
+        <span class="eyebrow">Entertainment</span>
+        <h2>More Than Just a Bar</h2>
+        <p>From the rooftop to the pool table, there's always something to do at Sharky's. This is a hangout, not just a drink stop.</p>
+      </header>
+      <div class="services-grid">
+        <div class="service-card">
+          <span class="service-card__icon">🏠</span>
+          <h3>Rooftop / Outdoor Deck</h3>
+          <p>Catch the game, grab a drink, and enjoy the open air. The rooftop deck at Sharky's is one of the best spots in Williamstown for a warm-night crowd.</p>
+        </div>
+        <div class="service-card">
+          <span class="service-card__icon">🎱</span>
+          <h3>Pool Tables</h3>
+          <p>Challenge a friend or join a stranger. Multiple tables available — no waiting if you get here early.</p>
+        </div>
+        <div class="service-card">
+          <span class="service-card__icon">🎯</span>
+          <h3>Darts &amp; Shuffleboard</h3>
+          <p>Classic bar games done right. Perfect for groups, dates, or just filling time between rounds.</p>
+        </div>
+        <div class="service-card">
+          <span class="service-card__icon">🎤</span>
+          <h3>Karaoke</h3>
+          <p>Regular karaoke nights — the crowd is into it. Whether you sing well or confidently, you'll fit right in.</p>
+        </div>
+        <div class="service-card">
+          <span class="service-card__icon">📺</span>
+          <h3>Live Sports on Every Screen</h3>
+          <p>We've got the games covered. Every major sport, every big game, every screen in the building.</p>
+        </div>
+        <div class="service-card">
+          <span class="service-card__icon">🧠</span>
+          <h3>Trivia Nights</h3>
+          <p>Compete for prizes and bragging rights. Weekly trivia with rotating categories keeps the regulars on their toes.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- FEATURE: ROOFTOP -->
+  <section class="section">
+    <div class="container">
+      <div class="feature-row">
+        <div class="feature-row__image">
+          <img src="../assets/hero-sharkys.jpg" alt="Sharky's Sports Bar interior">
+        </div>
+        <div class="feature-row__content">
+          <span class="eyebrow">The Rooftop</span>
+          <h2>The Best Outdoor Spot in Williamstown</h2>
+          <p>Sharky's rooftop deck brings outdoor bar energy to South Jersey. Open-air seating, drink in hand, game in view — or just a place to decompress after a long week.</p>
+          <p>Whether it's a summer Saturday or a cool fall football Sunday, the deck is where the real Sharky's regulars end up. Get here early if you want the good seats.</p>
+          <a href="tel:8567283666" class="btn btn--primary" style="color:#000;">Call Ahead: 856-728-3666</a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- FOOD & DRINKS MENU -->
+  <section id="menu" class="section section--alt">
+    <div class="container">
+      <header class="section-header">
+        <span class="eyebrow">Food &amp; Drinks</span>
+        <h2>Bar Food Done Right</h2>
+        <p>A full kitchen means real food — not just bar snacks. Wings, burgers, sandwiches, and a beer list that covers the basics and then some.</p>
+      </header>
+
+      <div class="menu-categories">
+
+        <div class="menu-category">
+          <div class="menu-category__header">
+            <span class="menu-category__icon">🍗</span>
+            <h3>Wings &amp; Starters</h3>
+          </div>
+          <div class="menu-items">
+            <div class="menu-item">
+              <div>
+                <span class="menu-item__name">Classic Wings</span>
+                <span class="menu-item__desc">Buffalo, BBQ, honey garlic, old bay — by the dozen</span>
+              </div>
+            </div>
+            <div class="menu-item">
+              <div>
+                <span class="menu-item__name">Boneless Wings</span>
+                <span class="menu-item__desc">Same sauces, boneless style — crispy and sauced to order</span>
+              </div>
+            </div>
+            <div class="menu-item">
+              <div>
+                <span class="menu-item__name">Mozzarella Sticks</span>
+                <span class="menu-item__desc">Golden fried, served with marinara</span>
+              </div>
+            </div>
+            <div class="menu-item">
+              <div>
+                <span class="menu-item__name">Nachos</span>
+                <span class="menu-item__desc">Loaded with cheese, jalapeños, salsa, and sour cream</span>
+              </div>
+            </div>
+            <div class="menu-item">
+              <div>
+                <span class="menu-item__name">Pretzel Bites</span>
+                <span class="menu-item__desc">Soft-baked, served with beer cheese</span>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="menu-category">
+          <div class="menu-category__header">
+            <span class="menu-category__icon">🍔</span>
+            <h3>Burgers &amp; Sandwiches</h3>
+          </div>
+          <div class="menu-items">
+            <div class="menu-item">
+              <div>
+                <span class="menu-item__name">Sharky's Burger</span>
+                <span class="menu-item__desc">1/2 lb smash-style, cheddar, lettuce, tomato, onion</span>
+              </div>
+            </div>
+            <div class="menu-item">
+              <div>
+                <span class="menu-item__name">Bacon Cheeseburger</span>
+                <span class="menu-item__desc">Crispy bacon, American cheese, house sauce</span>
+              </div>
+            </div>
+            <div class="menu-item">
+              <div>
+                <span class="menu-item__name">Grilled Chicken Sandwich</span>
+                <span class="menu-item__desc">Marinated chicken breast, avocado, Swiss</span>
+              </div>
+            </div>
+            <div class="menu-item">
+              <div>
+                <span class="menu-item__name">Buffalo Chicken Wrap</span>
+                <span class="menu-item__desc">Crispy chicken, hot sauce, blue cheese, slaw</span>
+              </div>
+            </div>
+            <div class="menu-item">
+              <div>
+                <span class="menu-item__name">Cheesesteak</span>
+                <span class="menu-item__desc">Ribeye, provolone, grilled onions and peppers</span>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="menu-category">
+          <div class="menu-category__header">
+            <span class="menu-category__icon">🍺</span>
+            <h3>Beer List</h3>
+          </div>
+          <div class="menu-items">
+            <div class="menu-item">
+              <div>
+                <span class="menu-item__name">Domestic Drafts</span>
+                <span class="menu-item__desc">Bud Light, Coors Light, Miller Lite — always on tap</span>
+              </div>
+            </div>
+            <div class="menu-item">
+              <div>
+                <span class="menu-item__name">Craft Rotation</span>
+                <span class="menu-item__desc">Local and regional craft taps — rotating selection, ask your bartender</span>
+              </div>
+            </div>
+            <div class="menu-item">
+              <div>
+                <span class="menu-item__name">Bottles &amp; Cans</span>
+                <span class="menu-item__desc">Imports, domestics, and seltzers available by the bottle</span>
+              </div>
+            </div>
+            <div class="menu-item">
+              <div>
+                <span class="menu-item__name">Pitchers</span>
+                <span class="menu-item__desc">Domestic pitchers for the table — best deal on a game day</span>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="menu-category">
+          <div class="menu-category__header">
+            <span class="menu-category__icon">🍹</span>
+            <h3>Cocktails &amp; Drinks</h3>
+          </div>
+          <div class="menu-items">
+            <div class="menu-item">
+              <div>
+                <span class="menu-item__name">Daily Specials</span>
+                <span class="menu-item__desc">Every night has a rotating drink special — ask what's on</span>
+              </div>
+            </div>
+            <div class="menu-item">
+              <div>
+                <span class="menu-item__name">Classic Cocktails</span>
+                <span class="menu-item__desc">Long Island, rum &amp; coke, whiskey sour, margarita, and more</span>
+              </div>
+            </div>
+            <div class="menu-item">
+              <div>
+                <span class="menu-item__name">Shots</span>
+                <span class="menu-item__desc">Well shots and call shots available — ask the bar</span>
+              </div>
+            </div>
+            <div class="menu-item">
+              <div>
+                <span class="menu-item__name">Non-Alcoholic</span>
+                <span class="menu-item__desc">Soft drinks, water, juice, and soda available</span>
+              </div>
+            </div>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- CTA BANNER -->
+  <section class="cta-banner">
+    <div class="container">
+      <h2>Come for the Game. Stay for the Night.</h2>
+      <p>Sharky's is open late every day of the week. No cover, no dress code, no reason not to show up. Call ahead or just walk in — we'll have a spot for you.</p>
+      <div class="cta-banner__actions">
+        <a href="tel:8567283666" class="btn btn--primary btn--lg" style="color:#000;">Call 856-728-3666</a>
+        <a href="#specials" class="btn btn--outline btn--lg" style="border-color:var(--color-primary);color:var(--color-primary);">See Tonight's Specials</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- HOURS & CONTACT -->
+  <section id="hours" class="section section--alt">
+    <div class="container">
+      <header class="section-header">
+        <span class="eyebrow">Hours &amp; Location</span>
+        <h2>We're Open When You Want to Be Out</h2>
+      </header>
+      <div class="hours-grid">
+        <div>
+          <h3 style="margin-bottom:1.5rem;font-size:1.15rem;">Bar Hours</h3>
+          <table class="hours-table" aria-label="Bar hours">
+            <tbody>
+              <tr data-day="mon"><td class="day">Monday</td><td class="time">3:00 pm – 2:00 am</td></tr>
+              <tr data-day="tue"><td class="day">Tuesday</td><td class="time">3:00 pm – 2:00 am</td></tr>
+              <tr data-day="wed"><td class="day">Wednesday</td><td class="time">3:00 pm – 2:00 am</td></tr>
+              <tr data-day="thu"><td class="day">Thursday</td><td class="time">3:00 pm – 2:00 am</td></tr>
+              <tr data-day="fri"><td class="day">Friday</td><td class="time">3:00 pm – 2:00 am</td></tr>
+              <tr data-day="sat"><td class="day">Saturday</td><td class="time">Noon – 2:00 am</td></tr>
+              <tr data-day="sun"><td class="day">Sunday</td><td class="time">Noon – 2:00 am</td></tr>
+            </tbody>
+          </table>
+        </div>
+        <div>
+          <h3 style="margin-bottom:1.5rem;font-size:1.15rem;">Find Us</h3>
+          <div class="contact-info__item">
+            <span class="contact-info__icon">📍</span>
+            <div>
+              <h4>Address</h4>
+              <p>820 N. Black Horse Pike<br>Williamstown, NJ 08094</p>
+            </div>
+          </div>
+          <div class="contact-info__item">
+            <span class="contact-info__icon">📞</span>
+            <div>
+              <h4>Phone</h4>
+              <a href="tel:8567283666">(856) 728-3666</a>
+            </div>
+          </div>
+          <div class="contact-info__item">
+            <span class="contact-info__icon">🌐</span>
+            <div>
+              <h4>Web</h4>
+              <p>sharkyssportsbarngrill.com</p>
+            </div>
+          </div>
+          <a href="https://maps.google.com/?q=820+N+Black+Horse+Pike+Williamstown+NJ+08094" target="_blank" rel="noopener noreferrer" class="map-placeholder">
+            <span class="map-icon">🗺️</span>
+            <span>820 N. Black Horse Pike, Williamstown NJ</span>
+            <span style="color:var(--color-primary);font-weight:600;">Open in Google Maps →</span>
+          </a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- FOOTER -->
+  <footer class="footer">
+    <div class="container">
+      <div class="footer__inner">
+        <div class="footer__brand">
+          <img src="../assets/logo-sharkys.svg" alt="" class="footer__logo">
+          <span class="footer__brand-name">Sharky's Sports Bar &amp; Grill</span>
+        </div>
+        <ul class="footer__links" role="list">
+          <li><a href="#specials">Specials</a></li>
+          <li><a href="#events">Events</a></li>
+          <li><a href="#menu">Food &amp; Drinks</a></li>
+          <li><a href="#hours">Hours</a></li>
+          <li><a href="tel:8567283666">856-728-3666</a></li>
+          <li><a href="../index.html">All Concept Sites</a></li>
+        </ul>
+      </div>
+      <p class="footer__copy">© Sharky's Sports Bar &amp; Grill · 820 N. Black Horse Pike, Williamstown, NJ 08094 · This page is a concept redesign created from publicly available information for outreach purposes only.</p>
+    </div>
+  </footer>
+
+  <script src="../scripts/main.js"></script>
+</body>
+</html>
