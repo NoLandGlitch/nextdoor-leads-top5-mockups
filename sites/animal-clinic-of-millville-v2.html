@@ -1,0 +1,478 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Animal Clinic of Millville Mock Up v2 — Modern Veterinary Care in Millville, NJ</title>
+  <meta name="description" content="Animal Clinic of Millville concept redesign v2. A modern, trust-first veterinary website with streamlined booking, digital forms, and clear service information.">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Merriweather:wght@400;500;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="../styles/main.css">
+  <style>
+    /* v2-specific overrides: warmer, more editorial feel */
+    .site-animal-clinic {
+      --color-primary: #1a3a5c;
+      --color-accent: #5da09d;
+      --color-bg: #faf8f3;
+      --color-surface: #ffffff;
+      --color-surface-alt: #f5f0e8;
+      --color-text: #1c2a3a;
+      --color-heading: #0f1928;
+      --font-heading: 'Merriweather', Georgia, serif;
+      --font-body: 'Inter', system-ui, sans-serif;
+    }
+    .nav {
+      background: rgba(255,255,255,0.97);
+      border-bottom: 1px solid var(--color-border);
+    }
+    .nav__logo img { height: 56px; }
+    .nav__phone { color: var(--color-text); font-weight: 600; }
+    .btn--primary {
+      background: var(--color-primary);
+      border-color: var(--color-primary);
+    }
+    .btn--primary:hover { background: var(--color-primary-dark); }
+    .btn--outline { border-color: var(--color-primary); color: var(--color-primary); }
+    .btn--outline:hover { background: var(--color-primary); color: #fff; }
+    .hero {
+      background-image: linear-gradient(rgba(10,20,40,0.55), rgba(10,20,40,0.55)), url('../assets/hero-animal.jpg');
+      min-height: 720px;
+    }
+    .hero__content { max-width: 720px; }
+    .hero__logo { height: 80px; margin-bottom: 1rem; }
+    .hero__eyebrow {
+      font-size: 0.875rem;
+      letter-spacing: 0.15em;
+      text-transform: uppercase;
+      color: rgba(255,255,255,0.9);
+      margin-bottom: 0.75rem;
+      display: block;
+    }
+    .hero h1 {
+      font-size: clamp(2.5rem, 5vw, 4rem);
+      line-height: 1.1;
+      color: #fff;
+      margin-bottom: 1rem;
+    }
+    .hero__sub {
+      font-size: 1.2rem;
+      color: rgba(255,255,255,0.92);
+      margin-bottom: 2rem;
+      max-width: 50ch;
+    }
+    .hero__actions { display: flex; gap: 1rem; flex-wrap: wrap; }
+    .btn { display: inline-flex; align-items: center; justify-content: center; gap: 0.5rem; padding: 1rem 2rem; border-radius: 100px; font-weight: 600; font-size: 1rem; transition: all 0.2s ease; text-decoration: none; }
+    .btn--lg { padding: 1.125rem 2.5rem; font-size: 1.1rem; }
+    .btn--outline-white { background: transparent; border: 2px solid #fff; color: #fff; }
+    .btn--outline-white:hover { background: #fff; color: var(--color-primary); }
+    .stats-bar { background: var(--color-surface); border-bottom: 1px solid var(--color-border); padding: 3rem 0; }
+    .stats-bar__grid { display: grid; grid-template-columns: repeat(4, 1fr); gap: 2rem; text-align: center; }
+    .stat__number { display: block; font-size: clamp(2rem, 4vw, 3rem); font-weight: 800; color: var(--color-accent); font-family: var(--font-heading); }
+    .stat__label { color: var(--color-text-light); font-size: 0.95rem; }
+    .section { padding: 6rem 0; }
+    .section-header { text-align: center; max-width: 720px; margin: 0 auto 4rem; }
+    .eyebrow { color: var(--color-accent); font-size: 0.8rem; font-weight: 700; letter-spacing: 0.12em; text-transform: uppercase; margin-bottom: 0.75rem; display: inline-block; }
+    .section-header h2 { font-size: clamp(2rem, 3.5vw, 2.8rem); margin-bottom: 1rem; color: var(--color-heading); }
+    .section-header p { color: var(--color-text-light); font-size: 1.1rem; }
+    .services-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 1.5rem; }
+    .service-card { background: var(--color-surface); border: 1px solid var(--color-border); border-radius: 16px; padding: 2rem; transition: all 0.25s ease; text-align: center; }
+    .service-card:hover { border-color: var(--color-accent); transform: translateY(-4px); box-shadow: 0 12px 32px rgba(0,0,0,0.08); }
+    .service-card__icon { font-size: 2.5rem; margin-bottom: 1rem; display: block; }
+    .service-card h3 { font-size: 1.25rem; margin-bottom: 0.75rem; color: var(--color-heading); }
+    .service-card p { color: var(--color-text-light); font-size: 0.95rem; line-height: 1.6; }
+    .feature-row { display: grid; grid-template-columns: 1fr 1fr; gap: 3rem; align-items: center; }
+    .feature-row__image { border-radius: 16px; overflow: hidden; }
+    .feature-row__image img { width: 100%; height: 100%; object-fit: cover; min-height: 400px; }
+    .feature-row__content .eyebrow { font-size: 0.75rem; }
+    .feature-row__content h2 { font-size: clamp(1.8rem, 3vw, 2.4rem); margin-bottom: 1rem; color: var(--color-heading); }
+    .feature-row__content p { color: var(--color-text-light); margin-bottom: 1.5rem; line-height: 1.7; }
+    .new-client-banner { background: var(--color-primary); color: #fff; padding: 3rem; border-radius: 20px; display: grid; grid-template-columns: 1fr auto; gap: 3rem; align-items: center; }
+    .new-client-banner h3 { font-size: clamp(1.5rem, 2.5vw, 2rem); margin-bottom: 0.75rem; }
+    .new-client-banner p { opacity: 0.9; line-height: 1.7; }
+    .new-client-banner .btn { min-width: 200px; }
+    .trust-grid { display: grid; grid-template-columns: repeat(4, 1fr); gap: 1.5rem; }
+    .trust-item { text-align: center; padding: 2rem 1.5rem; }
+    .trust-item__icon { font-size: 2.5rem; margin-bottom: 1rem; display: block; }
+    .trust-item h3 { font-size: 1.15rem; margin-bottom: 0.5rem; color: var(--color-heading); }
+    .trust-item p { color: var(--color-text-light); font-size: 0.95rem; line-height: 1.6; }
+    .cta-banner { background: var(--color-primary); color: #fff; padding: 4rem 0; text-align: center; }
+    .cta-banner h2 { font-size: clamp(2rem, 3.5vw, 2.8rem); margin-bottom: 1.5rem; }
+    .hours-grid { display: grid; grid-template-columns: repeat(2, 1fr); gap: 1rem; max-width: 560px; margin: 0 auto; }
+    .hours-row { display: flex; justify-content: space-between; padding: 0.75rem 1rem; background: var(--color-surface); border: 1px solid var(--color-border); border-radius: 8px; }
+    .hours-row__day { font-weight: 600; color: var(--color-heading); }
+    .hours-row__time { color: var(--color-text); }
+    .contact-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 3rem; }
+    .contact-info h3 { font-size: 1.5rem; margin-bottom: 1.5rem; }
+    .contact-item { display: flex; align-items: flex-start; gap: 1rem; margin-bottom: 1.5rem; }
+    .contact-item__icon { width: 44px; height: 44px; border-radius: 12px; background: var(--color-surface-alt); display: flex; align-items: center; justify-content: center; font-size: 1.25rem; flex-shrink: 0; }
+    .contact-item__text strong { display: block; color: var(--color-heading); margin-bottom: 0.25rem; }
+    .contact-item__text p { color: var(--color-text-light); margin: 0; }
+    .map-placeholder { background: var(--color-surface-alt); border: 1px solid var(--color-border); border-radius: 16px; min-height: 400px; display: flex; align-items: center; justify-content: center; color: var(--color-text-light); }
+    footer { background: var(--color-primary-dark); color: #fff; padding: 3rem 0 1.5rem; }
+    .footer-grid { display: grid; grid-template-columns: 2fr 1fr 1fr 1fr; gap: 3rem; margin-bottom: 3rem; }
+    .footer-brand p { color: rgba(255,255,255,0.7); line-height: 1.7; max-width: 320px; margin-top: 1rem; }
+    .footer-col h4 { font-size: 0.9rem; text-transform: uppercase; letter-spacing: 0.1em; margin-bottom: 1.25rem; opacity: 0.7; }
+    .footer-col a { display: block; color: rgba(255,255,255,0.85); margin-bottom: 0.75rem; transition: color 0.2s; text-decoration: none; }
+    .footer-col a:hover { color: var(--color-accent); }
+    .footer-bottom { border-top: 1px solid rgba(255,255,255,0.1); padding-top: 1.5rem; text-align: center; color: rgba(255,255,255,0.6); font-size: 0.9rem; }
+    @media (max-width: 1024px) {
+      .services-grid, .trust-grid, .stats-bar__grid { grid-template-columns: repeat(2, 1fr); }
+      .feature-row { grid-template-columns: 1fr; }
+      .feature-row__image { order: -1; }
+      .contact-grid { grid-template-columns: 1fr; }
+      .footer-grid { grid-template-columns: 1fr 1fr; }
+    }
+    @media (max-width: 768px) {
+      .nav__links, .nav__actions { display: none; }
+      .nav__hamburger { display: block; }
+      .services-grid, .trust-grid, .stats-bar__grid { grid-template-columns: 1fr; }
+      .hero { min-height: 600px; }
+      .new-client-banner { grid-template-columns: 1fr; text-align: center; }
+      .footer-grid { grid-template-columns: 1fr; }
+    }
+  </style>
+</head>
+<body class="site-animal-clinic">
+
+  <!-- NAV -->
+  <nav class="nav" role="navigation" aria-label="Main">
+    <div class="container nav__inner" style="display:flex;align-items:center;justify-content:space-between;min-height:80px;">
+      <a href="#top" class="nav__logo">
+        <img src="../assets/logo-animal-clinic.png" alt="Animal Clinic of Millville logo">
+      </a>
+      <ul class="nav__links" role="list" style="display:flex;gap:2rem;list-style:none;">
+        <li><a href="#services" style="color:var(--color-text);font-weight:500;">Services</a></li>
+        <li><a href="#new-clients" style="color:var(--color-text);font-weight:500;">New Clients</a></li>
+        <li><a href="#hours" style="color:var(--color-text);font-weight:500;">Hours &amp; Location</a></li>
+        <li><a href="#contact" style="color:var(--color-text);font-weight:500;">Contact</a></li>
+        <li><a href="../index.html" class="back-link" style="color:var(--color-text-light);font-size:0.9rem;">← All Sites</a></li>
+      </ul>
+      <div class="nav__actions" style="display:flex;align-items:center;gap:1.5rem;">
+        <a href="tel:8568258935" class="nav__phone">856-825-8935</a>
+        <a href="#book" class="btn btn--primary">Book Appointment</a>
+      </div>
+      <button class="nav__hamburger" aria-label="Open menu" aria-expanded="false" style="display:none;background:none;border:none;cursor:pointer;width:24px;height:18px;position:relative;">
+        <span style="display:block;width:100%;height:2px;background:var(--color-text);position:absolute;top:0;left:0;transition:0.2s;"></span>
+        <span style="display:block;width:100%;height:2px;background:var(--color-text);position:absolute;top:8px;left:0;transition:0.2s;"></span>
+        <span style="display:block;width:100%;height:2px;background:var(--color-text);position:absolute;top:16px;left:0;transition:0.2s;"></span>
+      </button>
+    </div>
+    <nav class="nav__mobile-menu" aria-label="Mobile menu" style="display:none;padding:1.5rem;background:var(--color-surface);border-top:1px solid var(--color-border);">
+      <a href="#services" style="display:block;padding:0.75rem 0;color:var(--color-text);text-decoration:none;">Services</a>
+      <a href="#new-clients" style="display:block;padding:0.75rem 0;color:var(--color-text);text-decoration:none;">New Clients</a>
+      <a href="#hours" style="display:block;padding:0.75rem 0;color:var(--color-text);text-decoration:none;">Hours &amp; Location</a>
+      <a href="#contact" style="display:block;padding:0.75rem 0;color:var(--color-text);text-decoration:none;">Contact</a>
+      <a href="#book" class="btn btn--primary" style="margin-top:0.5rem;text-align:center;justify-content:center;">Book Appointment</a>
+      <a href="../index.html" style="display:block;margin-top:1rem;color:var(--color-text-light);text-decoration:none;">← Back to All Sites</a>
+    </nav>
+  </nav>
+
+  <!-- HERO -->
+  <section id="top" class="hero" aria-label="Hero" style="background-image: linear-gradient(rgba(10,20,40,0.55), rgba(10,20,40,0.55)), url('../assets/hero-animal.jpg'); background-size:cover;background-position:center;position:relative;min-height:720px;display:flex;align-items:center;justify-content:center;">
+    <div class="hero__overlay" style="position:absolute;inset:0;"></div>
+    <div class="container" style="position:relative;z-index:1;text-align:center;padding:2rem;">
+      <div class="hero__content">
+        <img src="../assets/logo-animal-clinic.png" alt="Animal Clinic of Millville" class="hero__logo">
+        <p class="hero__eyebrow">Millville, NJ · Since 1984</p>
+        <h1>Compassionate Care for Every Pet in Your Family</h1>
+        <p class="hero__sub">Full-service veterinary care in Cumberland County. Book online in minutes — no hold music, no hassle.</p>
+        <div class="hero__actions">
+          <a href="#book" class="btn btn--primary btn--lg">Book Appointment</a>
+          <a href="#new-clients" class="btn btn--outline-white btn--lg">New Client Info</a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- TRUST BAR -->
+  <div class="stats-bar">
+    <div class="container">
+      <div class="stats-bar__grid">
+        <div>
+          <span class="stat__number">40+</span>
+          <span class="stat__label">Years Serving Millville</span>
+        </div>
+        <div>
+          <span class="stat__number">6</span>
+          <span class="stat__label">Days a Week Open</span>
+        </div>
+        <div>
+          <span class="stat__number">24/7</span>
+          <span class="stat__label">Online Booking Available</span>
+        </div>
+        <div>
+          <span class="stat__number">100%</span>
+          <span class="stat__label">Digital Forms</span>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- SERVICES -->
+  <section id="services" class="section">
+    <div class="container">
+      <header class="section-header">
+        <span class="eyebrow">What We Do</span>
+        <h2>Comprehensive Veterinary Services</h2>
+        <p>From routine wellness visits to surgical care, we're equipped to support your pet throughout every stage of life.</p>
+      </header>
+
+      <div class="services-grid">
+        <div class="service-card">
+          <span class="service-card__icon">🩺</span>
+          <h3>Wellness &amp; Preventive Care</h3>
+          <p>Annual and semi-annual exams, vaccinations, flea/tick/heartworm prevention, and nutritional counseling to keep your pet healthy year-round.</p>
+        </div>
+        <div class="service-card">
+          <span class="service-card__icon">🔬</span>
+          <h3>Diagnostics &amp; Lab Work</h3>
+          <p>In-house bloodwork, urinalysis, and diagnostic imaging so we can get answers fast — often during the same appointment.</p>
+        </div>
+        <div class="service-card">
+          <span class="service-card__icon">🦷</span>
+          <h3>Dental Care</h3>
+          <p>Professional cleanings, digital dental X-rays, and extractions when needed. Healthy teeth, healthier pet.</p>
+        </div>
+        <div class="service-card">
+          <span class="service-card__icon">⚕️</span>
+          <h3>Surgery</h3>
+          <p>Routine procedures including spay/neuter, soft tissue surgery, and mass removals — performed by experienced veterinary surgeons.</p>
+        </div>
+        <div class="service-card">
+          <span class="service-card__icon">🏥</span>
+          <h3>Sick &amp; Urgent Care</h3>
+          <p>When your pet isn't feeling right, we work to fit you in the same day. Call us first — we'll find a way to help.</p>
+        </div>
+        <div class="service-card">
+          <span class="service-card__icon">📋</span>
+          <h3>Online Forms &amp; Records</h3>
+          <p>Complete new client paperwork, vaccine records requests, and prescription refill forms online — before you even arrive.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- NEW CLIENTS -->
+  <section id="new-clients" class="section" style="background:var(--color-surface-alt);">
+    <div class="container">
+      <header class="section-header">
+        <span class="eyebrow">New Clients</span>
+        <h2>Getting Started Is Easy</h2>
+        <p>We welcome new patients every week. Here's how to make your first visit smooth and stress-free.</p>
+      </header>
+
+      <div class="feature-row">
+        <div class="feature-row__image">
+          <img src="../assets/hero-animal.jpg" alt="Veterinary consultation" loading="lazy">
+        </div>
+        <div class="feature-row__content">
+          <span class="eyebrow">Step 1</span>
+          <h2>Fill Out Your Forms Online</h2>
+          <p>Save time at check-in by completing your new client registration and pet history online before your first appointment. Bring your pet's prior vaccination records if you have them — we'll take care of the rest.</p>
+          <a href="#book" class="btn btn--primary">New Client Form</a>
+        </div>
+      </div>
+
+      <div class="new-client-banner">
+        <div>
+          <h3>Ready to Schedule Your First Visit?</h3>
+          <p>Book online any time — or call us at 856-825-8935 during office hours. We're accepting new patients for dogs, cats, and small animals.</p>
+        </div>
+        <div style="display:flex;flex-direction:column;gap:0.75rem;">
+          <a href="#book" class="btn btn--outline-white btn--lg">Book Online</a>
+          <a href="tel:8568258935" class="btn btn--outline-white">Call 856-825-8935</a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- WHY US -->
+  <section class="section" style="background:var(--color-surface);">
+    <div class="container">
+      <header class="section-header">
+        <span class="eyebrow">Why Choose Us</span>
+        <h2>A Clinic That Makes It Easy to Do Right by Your Pet</h2>
+      </header>
+      <div class="trust-grid">
+        <div class="trust-item">
+          <span class="trust-item__icon">📱</span>
+          <h3>Book Without Calling</h3>
+          <p>Our online scheduling is available 24/7. Pick your appointment type, choose a time, and you're confirmed — no phone tag needed.</p>
+        </div>
+        <div class="trust-item">
+          <span class="trust-item__icon">📄</span>
+          <h3>Digital-First Forms</h3>
+          <p>No clipboards in the waiting room. Fill out intake forms, request records, and handle follow-ups through our online portal.</p>
+        </div>
+        <div class="trust-item">
+          <span class="trust-item__icon">🕐</span>
+          <h3>Extended Evening Hours</h3>
+          <p>Open until 7pm Monday, Wednesday, and Thursday. Easier to get in after work without rushing.</p>
+        </div>
+        <div class="trust-item">
+          <span class="trust-item__icon">🐾</span>
+          <h3>Experienced, Caring Team</h3>
+          <p>Our veterinary team has been serving Cumberland County families for decades — you're in steady, knowledgeable hands.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- HOURS -->
+  <section id="hours" class="section" style="background:var(--color-surface-alt);">
+    <div class="container">
+      <header class="section-header">
+        <span class="eyebrow">Hours &amp; Location</span>
+        <h2>We're Here When You Need Us</h2>
+        <p>Convenient evening hours three days a week. Saturday mornings available.</p>
+      </header>
+      <div class="hours-grid">
+        <div class="hours-row">
+          <span class="hours-row__day">Monday</span>
+          <span class="hours-row__time">8:00 AM – 7:00 PM</span>
+        </div>
+        <div class="hours-row">
+          <span class="hours-row__day">Tuesday</span>
+          <span class="hours-row__time">8:00 AM – 5:00 PM</span>
+        </div>
+        <div class="hours-row">
+          <span class="hours-row__day">Wednesday</span>
+          <span class="hours-row__time">8:00 AM – 7:00 PM</span>
+        </div>
+        <div class="hours-row">
+          <span class="hours-row__day">Thursday</span>
+          <span class="hours-row__time">8:00 AM – 7:00 PM</span>
+        </div>
+        <div class="hours-row">
+          <span class="hours-row__day">Friday</span>
+          <span class="hours-row__time">8:00 AM – 5:00 PM</span>
+        </div>
+        <div class="hours-row">
+          <span class="hours-row__day">Saturday</span>
+          <span class="hours-row__time">8:00 AM – 12:00 PM</span>
+        </div>
+        <div class="hours-row">
+          <span class="hours-row__day">Sunday</span>
+          <span class="hours-row__time">Closed</span>
+        </div>
+      </div>
+      <p style="text-align:center;margin-top:2rem;color:var(--color-text-light);">2430 W Main St, Millville, NJ 08332</p>
+    </div>
+  </section>
+
+  <!-- CONTACT / MAP -->
+  <section id="contact" class="section" style="background:var(--color-surface);">
+    <div class="container">
+      <header class="section-header">
+        <span class="eyebrow">Contact Us</span>
+        <h2>Get in Touch</h2>
+        <p>Questions about your pet's care? We're happy to help.</p>
+      </header>
+      <div class="contact-grid">
+        <div class="contact-info">
+          <h3>Animal Clinic of Millville</h3>
+          <div class="contact-item">
+            <span class="contact-item__icon">📍</span>
+            <div class="contact-item__text">
+              <strong>Address</strong>
+              <p>2430 W Main St, Millville, NJ 08332</p>
+            </div>
+          </div>
+          <div class="contact-item">
+            <span class="contact-item__icon">📞</span>
+            <div class="contact-item__text">
+              <strong>Phone</strong>
+              <p><a href="tel:8568258935" style="color:var(--color-text);text-decoration:none;">856-825-8935</a></p>
+            </div>
+          </div>
+          <div class="contact-item">
+            <span class="contact-item__icon">✉️</span>
+            <div class="contact-item__text">
+              <strong>Email</strong>
+              <p><a href="mailto:animalclinicofmillville@gmail.com" style="color:var(--color-text);text-decoration:none;">animalclinicofmillville@gmail.com</a></p>
+            </div>
+          </div>
+          <div class="contact-item">
+            <span class="contact-item__icon">🌐</span>
+            <div class="contact-item__text">
+              <strong>Online Booking</strong>
+              <p><a href="#book" style="color:var(--color-accent);text-decoration:none;">Book an appointment</a></p>
+            </div>
+          </div>
+        </div>
+        <div class="map-placeholder">Map placeholder — Google Maps embed would go here</div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ONLINE BOOKING CTA -->
+  <section id="book" class="cta-banner">
+    <div class="container">
+      <h2>Schedule Your Pet's Next Visit Online</h2>
+      <p style="max-width:600px;margin:0 auto 2rem;opacity:0.9;">Choose your appointment type, pick a time, and you're confirmed. Takes less than 2 minutes.</p>
+      <a href="#book" class="btn btn--outline-white btn--lg" style="background:#fff;color:var(--color-primary);">Book Appointment</a>
+    </div>
+  </section>
+
+  <!-- FOOTER -->
+  <footer>
+    <div class="container">
+      <div class="footer-grid">
+        <div class="footer-brand">
+          <img src="../assets/logo-animal-clinic.png" alt="Animal Clinic of Millville" style="height:56px;margin-bottom:1rem;">
+          <p>Trusted veterinary care for Millville and Cumberland County since 1984. Your pet's health is our top priority.</p>
+        </div>
+        <div class="footer-col">
+          <h4>Services</h4>
+          <a href="#services">Wellness &amp; Preventive</a>
+          <a href="#services">Diagnostics &amp; Lab</a>
+          <a href="#services">Dental Care</a>
+          <a href="#services">Surgery</a>
+          <a href="#services">Urgent Care</a>
+        </div>
+        <div class="footer-col">
+          <h4>Resources</h4>
+          <a href="#new-clients">New Client Forms</a>
+          <a href="#book">Book Online</a>
+          <a href="#hours">Hours &amp; Location</a>
+          <a href="#contact">Contact Us</a>
+        </div>
+        <div class="footer-col">
+          <h4>Connect</h4>
+          <a href="tel:8568258935">856-825-8935</a>
+          <a href="mailto:animalclinicofmillville@gmail.com">Email Us</a>
+          <a href="#book">Online Portal</a>
+        </div>
+      </div>
+      <div class="footer-bottom">
+        <p>&copy; 2025 Animal Clinic of Millville. Concept redesign for portfolio purposes — not affiliated with the actual business.</p>
+      </div>
+    </div>
+  </footer>
+
+  <script>
+    // Mobile nav toggle
+    const hamburger = document.querySelector('.nav__hamburger');
+    const mobileMenu = document.querySelector('.nav__mobile-menu');
+    if (hamburger && mobileMenu) {
+      hamburger.addEventListener('click', () => {
+        const isOpen = mobileMenu.style.display === 'block';
+        mobileMenu.style.display = isOpen ? 'none' : 'block';
+        hamburger.setAttribute('aria-expanded', !isOpen);
+      });
+    }
+    // Smooth scroll
+    document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+      anchor.addEventListener('click', function(e) {
+        const target = document.querySelector(this.getAttribute('href'));
+        if (target) {
+          e.preventDefault();
+          target.scrollIntoView({ behavior: 'smooth', block: 'start' });
+          if (mobileMenu) mobileMenu.style.display = 'none';
+        }
+      });
+    });
+  </script>
+</body>
+</html>
